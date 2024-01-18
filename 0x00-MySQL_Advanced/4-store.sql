@@ -7,4 +7,4 @@ UPDATE items
 SET
     quantity = NEW.number - 1
 WHERE
-    name = NEW.item_name
+    name = NEW.item_name;
