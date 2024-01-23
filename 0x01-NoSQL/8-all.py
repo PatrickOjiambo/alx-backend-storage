@@ -1,3 +1,6 @@
+"""
+File contains list_all
+"""
 from typing import List
 from pymongo.collection import Collection, Cursor
 
