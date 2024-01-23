@@ -3,7 +3,6 @@
 File contains list_all
 """
 from typing import List
-from pymongo.collection import Collection
 
 
 def list_all(mongo_collection) -> List[dict]:
