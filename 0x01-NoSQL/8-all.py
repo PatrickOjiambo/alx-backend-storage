@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 File contains list_all
 """
