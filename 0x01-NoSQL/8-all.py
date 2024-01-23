@@ -3,10 +3,10 @@
 File contains list_all
 """
 from typing import List
-from pymongo.collection import Collection, Cursor
+from pymongo.collection import Collection
 
 
-def list_all(mongo_collection: Collection) -> List[dict]:
+def list_all(mongo_collection) -> List[dict]:
     """
     Lists all documents in a MongoDB collection.
 
@@ -17,6 +17,6 @@ def list_all(mongo_collection: Collection) -> List[dict]:
     - List[dict]: A list containing dictionaries representing the documents in the collection.
     """
     if mongo_collection is not None:
-        documents: Cursor = mongo_collection.find()
+        documents = mongo_collection.find()
         return [post for post in documents]
     return []
