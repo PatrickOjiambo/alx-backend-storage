@@ -2,7 +2,7 @@
 """
 Task 0
 """
-from typing import Union
+from typing import Union, Callable
 import uuid
 from uuid import UUID
 import redis
@@ -28,3 +28,12 @@ class Cache:
         randkey: str = str(uuid.uuid4())
         self._redis.set(randkey, data)
         return randkey
+
+    def get(self, key: str, fn: Callable = None,) -> Union[str, float, bytes, int]:
+        """
+        Changes data to the desired format
+        """
+        data = self._redis.get(key)
+        if (fn is not None):
+            return fn(data)
+        return data
