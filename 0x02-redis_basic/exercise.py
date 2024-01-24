@@ -29,7 +29,7 @@ class Cache:
         self._redis.set(randkey, data)
         return randkey
 
-    def get(self, key: str, fn: Callable = None,) -> Union[str, float, bytes, int]:
+    def get(self, key: str, fn: Callable) -> Union[str, float, bytes, int]:
         """
         Changes data to the desired format
         """
